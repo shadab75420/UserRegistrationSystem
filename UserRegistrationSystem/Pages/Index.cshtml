@@ -1,0 +1,62 @@
+﻿@page
+@model UserRegistrationSystem.Pages.IndexModel
+
+<h2>User Registration Form</h2>
+
+<form method="post">
+
+    <div>
+        <label>Username</label>
+        <input asp-for="RegisterUser.Username" />
+        <span asp-validation-for="RegisterUser.Username"
+              style="color:red"></span>
+    </div>
+
+    <br />
+
+    <div>
+        <label>Email</label>
+        <input asp-for="RegisterUser.Email" />
+        <span asp-validation-for="RegisterUser.Email"
+              style="color:red"></span>
+    </div>
+
+    <br />
+
+    <div>
+        <label>Password</label>
+        <input asp-for="RegisterUser.Password" type="password" />
+        <span asp-validation-for="RegisterUser.Password"
+              style="color:red"></span>
+    </div>
+
+    <br />
+
+    <div>
+        <label>Confirm Password</label>
+        <input asp-for="RegisterUser.ConfirmPassword"
+               type="password" />
+        <span asp-validation-for="RegisterUser.ConfirmPassword"
+              style="color:red"></span>
+    </div>
+
+    <br />
+
+    <div asp-validation-summary="All"
+         style="color:red">
+    </div>
+
+    <button type="submit">Register</button>
+
+</form>
+
+@if (!string.IsNullOrEmpty(Model.SuccessMessage))
+{
+    <h3 style="color:green">
+        @Model.SuccessMessage
+    </h3>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

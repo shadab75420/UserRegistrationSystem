@@ -198,6 +198,5 @@ This project demonstrates:
 - Data Annotations in ASP.NET Core
 - Client-side validation
 - Server-side validation
-- Validation summaries
 - Password comparison validation
 
